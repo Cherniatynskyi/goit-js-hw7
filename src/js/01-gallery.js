@@ -31,10 +31,7 @@ function onClickGalleryItems(event) {
     }
     const urlSource = event.target.dataset.source;
     if (urlSource) {
-        modalWindow = basicLightbox.create(`
-   
-<img src="${urlSource}"/>
-`, {
+        modalWindow = basicLightbox.create(`<img src="${urlSource}"/>`, {
             onShow: () => galleryItemsContainer.addEventListener("keydown", onEscClose),
             onClose: () => galleryItemsContainer.removeEventListener("keydown", onEscClose),
         });
